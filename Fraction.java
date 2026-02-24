@@ -4,8 +4,8 @@
 // Assignment 7 calculate least common denominator to add 2 fractions using recursion
 // Fraction class, creates fraction object with numerator and denominator
 public class Fraction {
-    int n;
-    int d;
+    int n; // numerator
+    int d; // denonimantor
     public Fraction() { // constructs empty fraction
     }
     public Fraction(int n, int d) { // constructs fraction using paramaters
