@@ -2,7 +2,7 @@
 // Cs145
 // 2/24/26
 // Assignment 7 calculate least common denominator to add 2 fractions using recursion
-// Main class
-public static void main(String[] args) {
-    
+// Manager class, houses methods
+public class Manager {
+
 }
