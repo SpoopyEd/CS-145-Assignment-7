@@ -12,7 +12,14 @@ public class Fraction {
         this.n = n;
         this.d = d;
     }
-    public void changeD() {
-        // what happens to the numerator when the denominator changes?
+    public void changeDenom(int lcd) { // changes denominator and numerator according to lcd
+        int value = 0;
+        if (lcd == d) {
+            // do nothing
+        } else {
+            value = lcd / d;
+            n *= value;
+            d = lcd;
+        }
     }
 }

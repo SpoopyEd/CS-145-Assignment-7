@@ -7,19 +7,25 @@ import java.util.Scanner;
 public class Assignment7 {
     public static Scanner input = new Scanner(System.in);  // Create a Scanner object
     public static void main(String[] args) {
+        int lcd = 0; // least common denominator
         Fraction fraction1 = prompt(1);
         Fraction fraction2 = prompt(2);
-        System.out.println(leastCommon(fraction1.d, fraction2.d));
+        lcd = leastCommon(fraction1.d, fraction2.d);
+        System.out.println(lcd);
+        fraction1.changeDenom(lcd);
+        System.out.println("Fraction" + ": " + fraction1.n + "/" + fraction1.d);
+        // find addition
     }
     public static int leastCommon(int d1, int d2) {
-        int lcd = 0;
-        int largest = 0;
-        int smallest = 0;
+        int lcd = 0; // least common denominator
+        int largest = 0; // largest number
+        int smallest = 0; // smallest number
         if (d1 == d2) {
             lcd = d1;
             return lcd;
         } else {
-            if (d1 > d2) { // finds smallest and largest
+            // finds smallest and largest
+            if (d1 > d2) { 
                 largest = d1;
                 smallest = d2;
             } else {
@@ -27,10 +33,10 @@ public class Assignment7 {
                 smallest = d1;
             }
 
-            if (largest % smallest == 0) {
-                lcd = largest;
+            if (largest % smallest == 0) { // if largest divisble by smallest
+                lcd = largest; // then lcd is the largest number
                 return lcd;
-            } else { // if largest not divisble by smallest then multiply them = lcd
+            } else { // if not divisible then multiply both denominators, that becomes the lcd
                 return leastCommon(d1 * d2, d2); 
             }
         }
@@ -44,8 +50,12 @@ public class Assignment7 {
         int d = input.nextInt();
         // catch non int
         input.nextLine(); // clears input
-        System.out.println("Fraction" + fractionNum + ": " + n + "/" + d);
+        System.out.println("Fraction " + fractionNum + ": " + n + "/" + d);
         Fraction fraction = new Fraction(n,d);
         return fraction;
+    }
+    public static Fraction addFraction(Fraction fraction1, Fraction fraction2) {
+        Fraction sum = new Fraction();
+        return sum;
     }
 }
