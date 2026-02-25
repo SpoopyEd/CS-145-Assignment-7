@@ -22,4 +22,8 @@ public class Fraction {
             d = lcd;
         }
     }
+    public String toString() {
+        String string = n + "/" + d;
+        return string;
+    }
 }
