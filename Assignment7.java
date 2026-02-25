@@ -14,7 +14,9 @@ public class Assignment7 {
         System.out.println(lcd);
         fraction1.changeDenom(lcd);
         System.out.println("Fraction" + ": " + fraction1.n + "/" + fraction1.d);
-        // find addition
+        Fraction sum = new Fraction();
+        sum = addFraction(fraction1, fraction2);
+        System.out.println("Sum" + ": " + sum.n + "/" + sum.d);
     }
     public static int leastCommon(int d1, int d2) {
         int lcd = 0; // least common denominator
@@ -55,7 +57,11 @@ public class Assignment7 {
         return fraction;
     }
     public static Fraction addFraction(Fraction fraction1, Fraction fraction2) {
-        Fraction sum = new Fraction();
+        int lcd = leastCommon(fraction1.d, fraction2.d);
+        fraction1.changeDenom(lcd);
+        fraction2.changeDenom(lcd);
+        int sumN = fraction1.n + fraction2.n;
+        Fraction sum = new Fraction(sumN, lcd);
         return sum;
     }
 }
