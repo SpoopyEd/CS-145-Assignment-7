@@ -7,7 +7,9 @@ import java.util.Scanner;
 public class Assignment7 {
     public static Scanner input = new Scanner(System.in);  // Create a Scanner object
     public static void main(String[] args) {
-        System.out.println(leastCommon(3,28));
+        Fraction fraction1 = prompt(1);
+        Fraction fraction2 = prompt(2);
+        System.out.println(leastCommon(fraction1.d, fraction2.d));
     }
     public static int leastCommon(int d1, int d2) {
         int lcd = 0;
@@ -33,26 +35,17 @@ public class Assignment7 {
             }
         }
     }
-    public static void prompt() { // will need to change later
-        System.out.println("What's the numerator for the 1st fraction you'd like to add?");
-        int n1 = input.nextInt();
+    public static Fraction prompt(int fractionNum) {
+        System.out.println("What's the numerator for fraction " + fractionNum + "?");
+        int n = input.nextInt();
         // catch non int
         input.nextLine(); // clears input
-        System.out.println("What's the denominator for the 1st fraction you'd like to add?");
-        int d1 = input.nextInt();
+        System.out.println("What's the denominator for fraction " + fractionNum + "?");
+        int d = input.nextInt();
         // catch non int
         input.nextLine(); // clears input
-        System.out.println("Fraction 1: " + n1 + "/" + d1);
-        Fraction fraction1 = new Fraction(n1,d1);
-        System.out.println("What's the numerator for the 1st fraction you'd like to add?");
-        int n2 = input.nextInt();
-        // catch non int
-        input.nextLine(); // clears input
-        System.out.println("What's the denominator for the 2nd fraction you'd like to add?");
-        int d2 = input.nextInt();
-        // catch non int
-        input.nextLine(); // clears input
-        System.out.println("Fraction 2: " + n2 + "/" + d2);
-        Fraction fraction2 = new Fraction(n2,d2);
+        System.out.println("Fraction" + fractionNum + ": " + n + "/" + d);
+        Fraction fraction = new Fraction(n,d);
+        return fraction;
     }
 }

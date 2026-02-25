@@ -10,7 +10,7 @@ public class Fraction {
     }
     public Fraction(int n, int d) { // constructs fraction using paramaters
         this.n = n;
-        this.n = d;
+        this.d = d;
     }
     public void changeD() {
         // what happens to the numerator when the denominator changes?
