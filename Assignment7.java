@@ -40,14 +40,32 @@ public class Assignment7 {
         }
     }
     public static Fraction prompt(int fractionNumber) {
+        boolean tryLoop = true;
+        int n = 0; // numerator
+        int d = 0; // denominator
         System.out.println("What's the numerator for fraction " + fractionNumber + "?");
-        int n = input.nextInt();
-        // catch non int
-        input.nextLine(); // clears input
+        while (tryLoop == true) { // keep trying until succesful, just like life
+            try {
+                n = input.nextInt();
+                tryLoop = false;
+            } catch (Exception e) {
+                System.out.println("Thats not a digit, try again");
+            } finally {
+                input.nextLine(); // clears input
+            }
+        }
+        tryLoop = true;
         System.out.println("What's the denominator for fraction " + fractionNumber + "?");
-        int d = input.nextInt();
-        // catch non int
-        input.nextLine(); // clears input
+        while (tryLoop == true) { // keep trying until succesful, just like life
+            try {
+                d = input.nextInt();
+                tryLoop = false;
+            } catch (Exception e) {
+                System.out.println("Thats not a digit, try again");
+            } finally {
+                input.nextLine(); // clears input
+            }
+        }
         Fraction fraction = new Fraction(n,d);
         System.out.println("Fraction " + fractionNumber + ": " + fraction.toString());
         return fraction;
